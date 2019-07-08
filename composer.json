@@ -1,0 +1,31 @@
+{
+  "name": "tymfrontiers-cdn/php-file-uploader",
+  "description": "PHP File uploader",
+  "keywords": ["php", "file","uploader","tym","frontiers"],
+  "homepage": "https://github.com/tymfrontiers-cdn/php-file-uploader",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+      {
+          "name": "Sir Louis",
+          "email": "me@sirlouis.io",
+          "homepage": "https://sirlouis.io",
+          "role": "developer"
+      },
+      {
+          "name": "Tym Frontiers Ltd",
+          "email": "git@tymfrontiers.com",
+          "homepage": "https://tymfrontiers.com",
+          "role": "developer"
+      }
+  ],
+  "require": {
+    "php" : ">=5.3"
+  },
+  "require-dev": {},
+  "autoload": {
+      "psr-4": {
+          "TymFrontiers\\Helper\\": "src/"
+      }
+  }
+}
