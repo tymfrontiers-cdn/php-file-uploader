@@ -38,6 +38,7 @@ trait FileUploader{
 	  	$this->_name 	= \str_replace(' ','_',\basename($file['name']));
 	  	$this->_type       	= $file['type'];
 	  	$this->_size       	= $file['size'];
+	  	$this->_creator     = $session->name;
 	  	$this->type_group   = $this->groupName();
 			$this->caption = !empty($this->caption) ? $this->caption : \pathinfo($file['name'], PATHINFO_FILENAME);
       $this->_extension = \pathinfo($file['name'], PATHINFO_EXTENSION);
