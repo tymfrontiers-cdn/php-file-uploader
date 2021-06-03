@@ -47,8 +47,8 @@ trait FileUploader{
 		}
 	}
 	public function upload(array $file){
-    if( !\is_dir($this->_path) ){
-      throw new Exception("Upload directory has not been set", 1);
+    if( !\is_dir(self::STORAGE_DIR . $this->_path) ){
+      throw new \Exception("Upload directory has not been set", 1);
     }
 		$this->_attachFile($file);
 		return $this->save();
@@ -72,7 +72,7 @@ trait FileUploader{
 		  }
 			// Determine the target_path
 			$this->_name = \strtolower( \uniqid(true) . \uniqid(true) . \uniqid().'.'.$this->_extension );
-			$target_path = "{$this->_path}/{$this->_name}";
+			$target_path = self::STORAGE_DIR . "{$this->_path}/{$this->_name}";
 			if( !$this->over_write ) $target_path = $this->_renameIfExist($target_path);
 			// Attempt to move the file
 			if( \move_uploaded_file($this->_temp_path, $target_path)) {
